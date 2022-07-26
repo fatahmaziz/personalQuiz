@@ -21,3 +21,17 @@ let questions = [{
   question: `Do I share my birth date with MS Dhoni?(Yes/No) - `,
   answer : `Yes`
 }]
+
+function checkAnswer(question, answer){
+    let userAnswer = readlineSync.question(question)
+    if(userAnswer.toLowerCase() === answer.toLowerCase()){
+      console.log(`You have answered correctly.\n`)
+      userScore++
+    } else{
+      console.log(`You have answered the incorrectly.\n`)
+      if(userScore>0){
+        userScore--
+      }
+    }
+    console.log(`Your current score - ${userScore}\n`)
+  }
