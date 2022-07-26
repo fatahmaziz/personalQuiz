@@ -34,4 +34,12 @@ function checkAnswer(question, answer){
       }
     }
     console.log(`Your current score - ${userScore}\n`)
+}
+
+function quiz(){
+  for(let initialValue =0; initialValue<questions.length; initialValue++){
+    let currentQuestion = questions[initialValue]
+    console.log(`Question ${initialValue + 1} - `)
+    checkAnswer(currentQuestion.question, currentQuestion.answer)
   }
+}
