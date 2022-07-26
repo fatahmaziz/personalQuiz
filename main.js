@@ -74,3 +74,28 @@ function topScore(){
   
     console.log(`Take a screenshot and send it in get your name displayed on the leaderboard permanently.`)
   }
+
+function playQuiz(){
+  console.log(`Welcome ${userName}! Are you ready to play DO YOU KNOW FATAH??`)
+  let userChoice = readlineSync.question(`Press Y to play the game. Press S to view the scoreboard. Press any other button to exit.\n`)
+  if(userChoice.toLowerCase() === `y`){
+    quiz()
+    topScore()
+  } else if(userChoice.toLowerCase() === `s`){
+    console.log(`Leaderboard - \n`)
+    console.log(`1. ${topPerformers.firstPlace} has scored ${topPerformers.firstScore}\n`)
+    console.log(`2. ${topPerformers.secondPlace} has scored ${topPerformers.secondScore}\n`)
+    console.log(`3. ${topPerformers.thirdPlace} has scored ${topPerformers.thirdScore}\n`)
+    let userChoice = readlineSync.question(`Press Y to play the game. Press any other button to exit.\n`)
+    if(userChoice.toLowerCase() === `y`){
+      quiz()
+      topScore()
+    } else{
+      console.log(`You have decide not to play :(\nIf you change your mind refresh the page :)`)
+    }
+  }else{
+    console.log(`You have decide not to play :(\nIf you change your mind refresh the page :)`)
+  }
+}
+
+playQuiz()
